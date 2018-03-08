@@ -30,10 +30,7 @@ public class ProducerController {
         return movieService.getMovieNamesByYear(year);
     }
     
-    @RequestMapping("/moviesFromCountry/{country}")
-    public List<String> getMoviesByCountry(@PathVariable("country") String country) {
-        return movieService.getMoviesByCountry(country);
-    }
+   
 
     @RequestMapping("/moviesWithId/{year}")
     public List<String[]> getMoviesByYearWithId(@PathVariable("year") int year) {
