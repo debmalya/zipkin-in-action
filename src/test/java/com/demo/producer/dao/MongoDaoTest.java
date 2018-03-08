@@ -24,25 +24,18 @@ public class MongoDaoTest {
         List<String> movieList= dao.getMoviesByYear(2013);
 
         Assert.assertNotNull("Retrieved movie list for 2013 cannot be null",movieList);
-        Assert.assertEquals("Retrieved movie list for 2013 cannot be null",127,movieList.size());
+        Assert.assertEquals("Retrieved movie list for 2013 will have 52074 entries",52074,movieList.size());
 
     }
 
-    @Test
-    public void getMoviesByCountry() throws Exception {
-        List<String> movieList= dao.getMoviesByCountry("Singapore");
-
-        Assert.assertNotNull("Retrieved movie list from Singapore cannot be null",movieList);
-        Assert.assertEquals("Retrieved movie list for 2013 cannot be null",6,movieList.size());
-
-    }
+   
 
     @Test
     public void getMoviesByYearWithId() throws Exception {
         List<String[]> movieList= dao.getMoviesWithIdByYear(2013);
 
         Assert.assertNotNull("Retrieved movie list for 2013 cannot be null",movieList);
-        Assert.assertEquals("Retrieved movie list for 2013 cannot be null",127,movieList.size());
+        Assert.assertEquals("Retrieved movie list for 2013 cannot be null",52074,movieList.size());
         Assert.assertEquals("Each movie should have id and title",2,movieList.get(0).length);
 
     }
